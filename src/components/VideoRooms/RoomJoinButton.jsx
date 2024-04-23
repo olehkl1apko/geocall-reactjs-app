@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 
 import { joinVideoRoom } from "@/store/actions/videoRoomActions";
-import { selectRooms } from "@/store/selectors/videoRoomsSelectors";
+import { selectInRoom } from "@/store/selectors/videoRoomsSelectors";
 
 export const RoomJoinButton = ({ room }) => {
-  const { creatorUsername, roomId, amountOfParticipants } = room;
-  const inRoom = useSelector(selectRooms);
+  const { creatorUsername, id: roomId, amountOfParticipants } = room;
+  const inRoom = useSelector(selectInRoom);
 
   const handleJoinRoom = () => {
     if (inRoom) {
