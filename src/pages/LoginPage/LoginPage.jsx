@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import "./LoginPage.css";
 // import { getFakeLocation } from "@/constants";
-import { setMyLocation } from "@/store/slices/mapSlice";
+import { useGeoLocation } from "@/hooks/useGeoLocation";
 import { connectWithSocketIOServer } from "@/utils/socketConn";
 import { selectMyLocation } from "@/store/selectors/mapSelectors";
 import { proceedWithLogin } from "@/store/actions/loginPageActions";
@@ -16,12 +16,10 @@ import LoginInput from "./LoginInput";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
-  const [locationErrorOccurred, setLocationErrorOccurred] = useState(false);
-
   const myLocation = useSelector(selectMyLocation);
+  const { locationErrorOccurred } = useGeoLocation();
 
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const handleLogin = () => {
     proceedWithLogin({
@@ -32,37 +30,6 @@ const LoginPage = () => {
       },
     });
     navigate("/map");
-  };
-
-  const locationOptions = {
-    enableHighAccuracy: true,
-    timeout: 60000, // check the location every minute
-    maximumAge: 0,
-  };
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      onSuccess,
-      onError,
-      locationOptions
-    );
-
-    // onSuccess(getFakeLocation());
-  }, []);
-
-  const onError = (error) => {
-    console.log("Error occurred when trying to get location");
-    console.log(error);
-    setLocationErrorOccurred(true);
-  };
-
-  const onSuccess = (position) => {
-    dispatch(
-      setMyLocation({
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      })
-    );
   };
 
   useEffect(() => {

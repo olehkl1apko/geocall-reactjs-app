@@ -1,8 +1,9 @@
 const FAKE_LOCATIONS = [
   {
+    // Kyiv
     coords: {
-      latitude: 0.76126,
-      longitude: 31.33584,
+      latitude: 50.4538739,
+      longitude: 30.3538376,
     },
   },
   {
@@ -51,4 +52,10 @@ const FAKE_LOCATIONS = [
 
 export const getFakeLocation = () => {
   return FAKE_LOCATIONS[Math.floor(Math.random() * FAKE_LOCATIONS.length)];
+};
+
+export const locationOptions = {
+  enableHighAccuracy: true,
+  timeout: 60000,
+  maximumAge: 0,
 };
