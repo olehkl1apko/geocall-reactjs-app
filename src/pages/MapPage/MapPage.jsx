@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Marker } from "./Marker";
 import { UserInfoCard } from "@/components/UserInfoCard";
 import { Messenger } from "@/components/Messenger";
-// import VideoRooms from "../VideoRooms/VideoRooms";
+import { VideoRooms } from "@/components/VideoRooms";
 
 import "./MapPage.css";
 import {
@@ -58,7 +58,7 @@ const MapPage = () => {
           userLocation={cardChosenOption.coords}
         />
       )}
-      {/* <VideoRooms /> */}
+      <VideoRooms />
     </div>
   );
 };

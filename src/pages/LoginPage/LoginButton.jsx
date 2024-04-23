@@ -1,9 +1,10 @@
 const LoginButton = ({ onClickHandler, disabled }) => {
   return (
     <button
-      disabled={disabled}
       onClick={onClickHandler}
-      className="l_page_login_button"
+      className={
+        disabled ? "l_page_login_button_disabled" : "l_page_login_button"
+      }
     >
       Login
     </button>
