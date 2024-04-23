@@ -57,5 +57,5 @@ export const getFakeLocation = () => {
 export const locationOptions = {
   enableHighAccuracy: true,
   timeout: 60000,
-  maximumAge: 0,
+  maximumAge: Infinity,
 };

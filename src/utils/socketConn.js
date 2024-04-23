@@ -10,7 +10,7 @@ import { call, disconnect } from "./webRTCHandler";
 let socket = null;
 
 export const connectWithSocketIOServer = () => {
-  socket = io(import.meta.env.SERVER_URL);
+  socket = io(import.meta.env.VITE_SERVER_URL);
 
   socket.on("connect", () => {
     console.log("connected to socket server");
