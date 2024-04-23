@@ -1,5 +1,5 @@
 import store from "../store";
-import { setOnlineUsers, removeDisconnectedUser } from "../../MapPage/mapSlice";
+import { setOnlineUsers, removeDisconnectedUser } from "../slices/mapSlice";
 
 export const onlineUsersHandler = (socketId, usersData) => {
   store.dispatch(

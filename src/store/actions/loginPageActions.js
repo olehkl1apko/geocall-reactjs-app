@@ -1,5 +1,3 @@
-import * as socketConn from "../../socketConnection/socketConn";
+import { login } from "@/utils/socketConn";
 
-export const proceedWithLogin = (data) => {
-  socketConn.login(data);
-};
+export const proceedWithLogin = (data) => login(data);

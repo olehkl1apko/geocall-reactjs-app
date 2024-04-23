@@ -1,7 +1,8 @@
 import { v4 as uuid } from "uuid";
-import { addChatbox, addChatMessage } from "../../Messenger/messengerSlice";
+
+import { addChatbox, addChatMessage } from "../slices/messengerSlice";
 import store from "../store";
-import * as socketConn from "../../socketConnection/socketConn";
+import * as socketConn from "@/utils/socketConn";
 
 export const sendChatMessage = (receiverSocketId, content) => {
   const message = {

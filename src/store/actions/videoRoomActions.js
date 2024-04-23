@@ -1,10 +1,7 @@
 import { v4 as uuid } from "uuid";
 import store from "../store";
-import {
-  setInRoom,
-  setRooms,
-} from "../../realtimeCommunication/videoRoomsSlice";
-import * as socketConn from "../../socketConnection/socketConn";
+import { setInRoom, setRooms } from "../slices/videoRoomsSlice";
+import * as socketConn from "@/utils/socketConn";
 import {
   getAccessToLocalStream,
   getPeerId,
