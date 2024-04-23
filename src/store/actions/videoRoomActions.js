@@ -6,7 +6,7 @@ import {
   getAccessToLocalStream,
   getPeerId,
   disconnect,
-} from "../../realtimeCommunication/webRTCHandler";
+} from "@/utils/webRTCHandler";
 
 export const createVideoRoom = async () => {
   // get access to local stream
