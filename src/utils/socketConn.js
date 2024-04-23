@@ -1,16 +1,16 @@
 import io from "socket.io-client";
-import { chatMessageHandler } from "../store/actions/messengerActions";
+import { chatMessageHandler } from "@/store/actions/messengerActions";
 import {
   onlineUsersHandler,
   userDisconnectedHandler,
-} from "../store/actions/usersActions";
-import { videoRoomsListHandler } from "../store/actions/videoRoomActions";
-import { call, disconnect } from "../realtimeCommunication/webRTCHandler";
+} from "@/store/actions/usersActions";
+import { videoRoomsListHandler } from "@/store/actions/videoRoomActions";
+import { call, disconnect } from "./webRTCHandler";
 
 let socket = null;
 
 export const connectWithSocketIOServer = () => {
-  socket = io("http://localhost:3003");
+  socket = io(import.meta.env.SERVER_URL);
 
   socket.on("connect", () => {
     console.log("connected to socket server");

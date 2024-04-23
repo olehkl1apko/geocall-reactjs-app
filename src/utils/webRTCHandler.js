@@ -4,7 +4,7 @@ import {
   setLocalStream,
   setRemoteStream,
 } from "@/store/slices/videoRoomsSlice";
-import store from "../store/store";
+import store from "@/store/store";
 
 let peer;
 let peerId;
