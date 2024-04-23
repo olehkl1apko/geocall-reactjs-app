@@ -14,9 +14,9 @@ export const UserInfoCard = ({ username, userLocation, socketId }) => {
         fontSize="14px"
         text={`${calculateDistanceBetweenCoords(myLocation, userLocation)}km`}
       />
-      <div className="map_page_card_buttons_container">
+      <button className="map_page_card_buttons_container">
         <ChatButton socketId={socketId} username={username} />
-      </div>
+      </button>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Marker } from "./Marker";
 import { UserInfoCard } from "@/components/UserInfoCard";
-// import Messenger from "../Messenger/Messenger";
+import { Messenger } from "@/components/Messenger";
 // import VideoRooms from "../VideoRooms/VideoRooms";
 
 import "./MapPage.css";
@@ -50,7 +50,7 @@ const MapPage = () => {
           return <Marker onlineUser={onlineUser} key={onlineUser.socketId} />;
         })}
       </GoogleMapReact>
-      {/* <Messenger /> */}
+      <Messenger />
       {cardChosenOption && (
         <UserInfoCard
           socketId={cardChosenOption.socketId}
